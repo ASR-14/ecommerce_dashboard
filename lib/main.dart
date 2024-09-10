@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: appname,
-        home: LoginScreen(),
+        home: const LoginScreen(),
         theme: ThemeData(
-            appBarTheme: AppBarTheme(
+            appBarTheme: const AppBarTheme(
                 backgroundColor: Colors.transparent, elevation: 0.0)));
   }
 }

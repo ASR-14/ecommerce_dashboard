@@ -11,4 +11,10 @@ const appname = "eMart Seller App",
     dashboard = "Dashboard",
     orders = "Orders",
     products = "Products",
-    settings = "Settings";
+    settings = "Settings",
+    loginTo = "Login to your account",
+    rating = "Rating",
+    totalSales = "Total Sales",
+    popular = "Popular Products",
+    unpaid = "Unpaid"
+    ;

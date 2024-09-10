@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:seller_app/const/const.dart';
 
 Widget normalText({text, color = Colors.white, size = 14.0}) {
