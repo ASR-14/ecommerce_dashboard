@@ -11,10 +11,30 @@ const appname = "eMart Seller App",
     dashboard = "Dashboard",
     orders = "Orders",
     products = "Products",
+    messages = "Messages",
+    logout = "Logout",
     settings = "Settings",
     loginTo = "Login to your account",
     rating = "Rating",
     totalSales = "Total Sales",
+    shopSettings = "Shop Settings",
     popular = "Popular Products",
-    unpaid = "Unpaid"
-    ;
+    featured = "Featured",
+    edit = "Edit",
+    remove = "Remove",
+    save = "Save",
+    name = "Username",
+    confirmPass = "Confirm Password",
+    unpaid = "Unpaid";
+
+//shop setting strings
+const nameHint = "eg. Vendor Name",
+    shopDescHint = "Enter your shop description",
+    showWebsiteHint = "eg. vendor.emart.com",
+    shopMobileHint = "eg. +234556776",
+    shopAddressHint = "eg. Near Railway Bazaar",
+    description = "Description",
+    mobile = "Shop Mobile",
+    website = "Shop Website",
+    shopName = "Shop Name",
+    address = "Shop Address";
