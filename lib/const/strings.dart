@@ -24,13 +24,14 @@ const appname = "eMart Seller App",
     remove = "Remove",
     save = "Save",
     name = "Username",
+    chats = "Chats",
     confirmPass = "Confirm Password",
     unpaid = "Unpaid";
 
 //shop setting strings
 const nameHint = "eg. Vendor Name",
     shopDescHint = "Enter your shop description",
-    showWebsiteHint = "eg. vendor.emart.com",
+    shopWebsiteHint = "eg. vendor.emart.com",
     shopMobileHint = "eg. +234556776",
     shopAddressHint = "eg. Near Railway Bazaar",
     description = "Description",

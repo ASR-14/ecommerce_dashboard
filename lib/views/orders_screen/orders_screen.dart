@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+import 'package:seller_app/views/orders_screen/order_details.dart';
 import 'package:seller_app/views/widgets/appbar_widget.dart';
 import 'package:seller_app/views/widgets/text_style.dart';
 import 'package:intl/intl.dart' as intl;
@@ -18,7 +20,9 @@ class OrdersScreen extends StatelessWidget {
             children: List.generate(
               20,
               (index) => ListTile(
-                onTap: () {},
+                onTap: () {
+                  Get.to(() => const OrderDetails());
+                },
                 tileColor: textfieldGrey,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12)),
