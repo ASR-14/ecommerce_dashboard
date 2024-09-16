@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:seller_app/controllers/auth_controller.dart';
@@ -27,7 +29,9 @@ class ProfileScreen extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-                Get.to(() => const EditProfilescreen());
+                Get.to(() => EditProfilescreen(
+                      username: controller.snapshotData['vendor_name'],
+                    ));
               },
               icon: const Icon(
                 Icons.edit,
@@ -52,11 +56,33 @@ class ProfileScreen extends StatelessWidget {
             return Column(
               children: [
                 ListTile(
-                  leading: Image.asset(imgProduct)
-                      .box
-                      .roundedFull
-                      .clip(Clip.antiAlias)
-                      .make(),
+                  leading: controller.snapshotData['imageUrl'] == "" &&
+                          controller.profileImgPath.isEmpty
+                      ? Image.asset(imgProduct, width: 100, fit: BoxFit.cover)
+                          .box
+                          .roundedFull
+                          .clip(Clip.antiAlias)
+                          .make()
+                      : controller.snapshotData['imageUrl'] != "" &&
+                              controller.profileImgPath.isEmpty
+                          ? Image.network(controller.snapshotData['imageUrl'],
+                                  width: 100, fit: BoxFit.cover)
+                              .box
+                              .roundedFull
+                              .clip(Clip.antiAlias)
+                              .make()
+                          : Image.file(File(controller.profileImgPath.value),
+                                  width: 100, fit: BoxFit.cover)
+                              .box
+                              .roundedFull
+                              .clip(Clip.antiAlias)
+                              .make(),
+
+                  // leading: Image.asset(imgProduct)
+                  //     .box
+                  //     .roundedFull
+                  //     .clip(Clip.antiAlias)
+                  //     .make(),
                   title: boldText(
                       text: "${controller.snapshotData['vendor_name']}"),
                   subtitle:

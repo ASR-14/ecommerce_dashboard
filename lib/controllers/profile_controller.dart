@@ -18,6 +18,13 @@ class ProfileController extends GetxController {
   var oldpassController = TextEditingController();
   var newpassController = TextEditingController();
 
+  //shop controller
+  var shopNameController = TextEditingController();
+  var shopAddressController = TextEditingController();
+  var shopMobileController = TextEditingController();
+  var shopWebsiteController = TextEditingController();
+  var shopDescController = TextEditingController();
+
   changeImage(context) async {
     try {
       final img = await ImagePicker()
@@ -39,7 +46,8 @@ class ProfileController extends GetxController {
 
   updateProfile({name, password, imgUrl}) async {
     var store = firestore.collection(vendersCollection).doc(currentUser!.uid);
-    await store.set({'name': name, 'password': password, 'imageUrl': imgUrl},
+    await store.set(
+        {'vendor_name': name, 'password': password, 'imageUrl': imgUrl},
         SetOptions(merge: true));
     isLoading(false);
   }
@@ -51,5 +59,18 @@ class ProfileController extends GetxController {
     }).catchError((error) {
       print(error.toString());
     });
+  }
+
+  updateShop({shopname, shopaddress, shopmobile, shopwebsite, shopdesc}) async {
+    var store = firestore.collection(vendersCollection).doc(currentUser!.uid);
+    await store.set({
+      'testtt': "testt",
+      'shop_name': shopname,
+      'shop_address': shopaddress,
+      'shop_mobile': shopmobile,
+      'shop_website': shopwebsite,
+      'shop_desc': shopdesc
+    }, SetOptions(merge: true));
+    isLoading(false);
   }
 }
